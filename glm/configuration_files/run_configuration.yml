@@ -1,0 +1,11 @@
+restart_file: .na
+start_day_local: '2021-02-01'
+start_time_local: '00:00:00'
+end_day_local: .na
+forecast_start_day_local: '2021-03-21'
+forecast_horizon: 10
+forecast_project_id: PRPO_forecasts
+sim_name: PRPO_forecasts
+forecast_sss_on: no
+forecast_location: /Users/ryanmcclure/Documents/PRPO-forecast/glm
+execute_location: /Users/ryanmcclure/Documents/PRPO-forecast/wd

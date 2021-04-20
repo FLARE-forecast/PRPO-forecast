@@ -1,0 +1,111 @@
+&glm_setup
+   sim_name = 'PRPO'
+   max_layers = 500
+   min_layer_vol = 0.025
+   min_layer_thick = 0.15
+   max_layer_thick = 0.33
+   non_avg = .true.
+/
+&light
+   light_mode = 0
+   n_bands = 4
+   light_extc = 1, 0.5, 2, 4
+   energy_frac = 0.51, 0.45, 0.035, 0.005
+   Benthic_Imin = 10
+   Kw = 0.4206
+/
+&mixing
+   coef_mix_conv = 0.2
+   coef_wind_stir = 0.23
+   coef_mix_shear = 0.3
+   coef_mix_turb = 0.51
+   coef_mix_KH = 0.3
+   coef_mix_hyp = 0.5
+   deep_mixing = 2
+   coef_mix_shreq = 0
+/
+&morphometry
+   lake_name = 'PrairiePotholeLake'
+   latitude = 47.12984
+   longitude = -99.25315
+   bsn_len = 504
+   bsn_wid = 333
+   bsn_vals = 10
+   H = 575, 575.5, 576, 576.5, 577, 577.5, 578, 578.5, 578.9, 579
+   A = 0.059721988, 2.526010063, 8.416914247, 27.30382676, 46503.32333, 79410.32286, 101046.2741, 105615.0383, 108733.8, 109852.4999
+/
+&time
+   timefmt = 2
+   start = '2021-03-15 01:00'
+   stop = '2021-03-16 01:00'
+   dt = 1800
+   num_days = 1
+   timezone = -5
+/
+&output
+   out_dir = '.'
+   out_fn = 'output'
+   nsave = 48
+/
+&init_profiles
+   num_depths = 39
+   lake_depth = 3.9528
+   the_depths = 0, 0.1403, 0.2849, 0.4379, 0.5765, 0.7241, 0.8864, 1.0408, 1.2025, 1.3969, 1.5864, 1.8486, 1.9056, 1.958, 1.9853, 2.0126, 2.04, 2.1006, 2.1157, 2.1307, 2.1458, 2.1811, 2.2342, 2.243, 2.2519, 2.2828, 2.3165, 2.3501, 2.3693, 2.397, 2.4248, 2.4525, 2.549, 2.6711, 2.8251, 3.0739, 3.2124, 3.4004, 3.6313
+   the_temps = 3.9743, 3.9856, 3.9673, 3.9507, 3.958, 3.9659, 3.9739, 3.974, 3.9713, 3.9685, 3.911, 3.8688, 3.8544, 3.8439, 3.8367, 3.8311, 3.8222, 3.8145, 3.8115, 3.8084, 3.8033, 3.7944, 3.7881, 3.7863, 3.7823, 3.7758, 3.769, 3.7636, 3.7589, 3.7533, 3.7477, 3.7352, 3.7271, 3.7168, 3.7019, 3.6889, 3.6783, 3.668, 3.7068
+   the_sals = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+   num_wq_vars = 0
+   wq_names = 'OXY_oxy'
+   wq_init_vals = 300, 300, 300, 300, 300, 300, 300, 300, 300, 300
+   snow_thickness = 0
+   white_ice_thickness = 0
+   blue_ice_thickness = 0
+   avg_surf_temp = 3.7115
+   restart_variables = 3.80328731237049, 0.158059800839274, 0.0002710670111752, 0, 188542868.498046, 0, 0.183358372649309, 1008, 1008, 1008, 0, 3.80328731237049, 0, 0, 0, 0, 0
+/
+&meteorology
+   met_sw = .true.
+   lw_type = 'LW_IN'
+   rain_sw = .true.
+   atm_stab = 0
+   catchrain = .false.
+   rad_mode = 1
+   albedo_mode = 1
+   cloud_mode = 4
+   meteo_fl = '/Users/ryanmcclure/Documents/PRPO-forecast/wd/met_ens01.csv'
+   subdaily = .true.
+   wind_factor = 0.8218
+   sw_factor = 1.2
+   lw_factor = 1.201
+   at_factor = 1
+   rh_factor = 1
+   rain_factor = 0.2943
+   cd = 0.0013
+   ce = 0.0013
+   ch = 3e-04
+   rain_threshold = 0.04
+   time_fmt = 'YYYY-MM-DD hh:mm:ss'
+/
+&inflow
+   num_inflows = 0
+/
+&outflow
+   num_outlet = 0
+   seepage = .true.
+   seepage_rate = 3
+/
+&snowice
+   snow_albedo_factor = 1
+   snow_rho_max = 500
+   snow_rho_min = 100
+/
+&sediment
+   benthic_mode = 2
+   sed_heat_model = 1
+   n_zones = 2
+   zone_heights = 2, 4.5
+   sed_heat_Ksoil = 1.2, 1.2
+   sed_temp_depth = 0.5, 0.5
+   sed_temp_mean = 7.3683, 11.4047
+   sed_temp_amplitude = 0, 0
+   sed_temp_peak_doy = 278.4380074, 276.9746504
+/
